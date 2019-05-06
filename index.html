@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Shelby Berryann: About Me</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Additional Styles 1 -->
+    <style>
+        @media print {
+            .gm-style .gmnoprint,
+            .gmnoprint {
+                display: none
+            }
+        }
+
+        @media screen {
+            .gm-style .gmnoscreen,
+            .gmnoscreen {
+                display: none
+            }
+        }
+
+        .gm-style-pb c {
+            transition: opacity ease-in-out;
+            background-color: rgba(0, 0, 0, 0.45);
+            text-align: center
+        }
+
+        .gm-style-pbt {
+            font-size: 22px;
+            color: white;
+            font-family: Roboto, Arial, sans-serif;
+            position: relative;
+            margin: 0;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%)
+        }
+    </style>
+
+    <!-- Custom Theme -->
+    <link rel="stylesheet" href="home/styles/style_main.css">
+    <link rel="stylesheet" href="home/styles/color_theme.css">
+
+    <!-- Fonts/Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css">
+
+    <!-- Additional Styles 2 -->
+    <style>
+        .gm-style {
+            font: 400 11px Roboto, Arial, sans-serif;
+            text-decoration: none;
+        }
+
+        .gm-style img {
+            max-width: none;
+        }
+
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Lato", sans-serif;
+        }
+
+        body,
+        html {
+            height: 100%;
+            color: #777;
+            line-height: 1.8;
+        }
+        /* Create a Parallax Effect */
+
+        .bgimg-1,
+        .bgimg-2,
+        .bgimg-3 {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        /* First image (Logo. Full height) */
+
+        .bgimg-1 {
+            background-image: url('home/images/parallax1.jpg');
+            min-height: 100%;
+        }
+        /* Second image (Portfolio) */
+
+        .bgimg-2 {
+            background-image: url("home/images/parallax2.png");
+            min-height: 400px;
+        }
+        /* Third image (Contact) */
+
+        .bgimg-3 {
+            background-image: url("home/images/parallax3.jpg");
+            min-height: 400px;
+        }
+
+        .folio-wide {
+            letter-spacing: 10px;
+        }
+
+        .folio-hover-opacity {
+            cursor: pointer;
+        }
+        /* Turn off parallax scrolling for tablets and phones */
+
+        @media only screen and (max-device-width: 1024px) {
+            .bgimg-1,
+            .bgimg-2,
+            .bgimg-3 {
+                background-attachment: scroll;
+            }
+        }
+        /* Image Opacity Hover Toggle */
+
+        .folio-opacity-profile {
+            opacity: 0.75
+        }
+
+        .folio-hover-opacity-off-profile:hover {
+            opacity: 1
+        }
+        /* Footer Opacity Hover Toggle */
+
+        .folio-opacity-footer {
+            opacity: .8
+        }
+
+        .folio-hover-opacity-off-footer:hover {
+            opacity: 1
+        }
+
+        p > a {
+            color: #009688;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar (sit on top) -->
+    <div class="folio-top">
+        <div class="folio-bar folio-card folio-animate-top folio-white" id="myNavbar">
+            <a class="folio-bar-item folio-button folio-hover-black folio-hide-medium folio-hide-large folio-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+                <i class="fa fa-bars"></i>
+            </a>
+            <a href="#home" class="folio-bar-item folio-button">HOME</a>
+            <a href="#portfolio" class="folio-bar-item folio-button folio-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
+            <a href="#about" class="folio-bar-item folio-button folio-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+            <a href="#contact" class="folio-bar-item folio-button folio-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+        </div>
+
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="folio-bar-block folio-white folio-hide folio-hide-large folio-hide-medium">
+            <a href="#portfolio" class="folio-bar-item folio-button" onclick="toggleFunction()">PORTFOLIO</a>
+            <a href="#about" class="folio-bar-item folio-button" onclick="toggleFunction()">ABOUT</a>
+            <a href="#contact" class="folio-bar-item folio-button" onclick="toggleFunction()">CONTACT</a>
+        </div>
+    </div>
+
+    <!-- First Parallax Image with Logo Text -->
+    <div class="bgimg-1 folio-display-container folio-opacity-min" id="home">
+        <div class="folio-display-middle" style="white-space:nowrap;">
+            <span class="folio-center folio-padding-large folio-black folio-xlarge folio-wide folio-animate-opacity">Shelby<span class="folio-hide-small"> Makes Art.</span></span>
+        </div>
+    </div>
+
+    <!-- Container (Portfolio Section) -->
+    <div class="folio-content folio-container folio-padding-64" id="portfolio">
+        <h3 class="folio-center">MY WORK</h3>
+        <p class="folio-center"><em>Here is some of my favorite work.</em></p>
+        <br>
+
+        <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+        <div class="folio-row-padding folio-center">
+            <div class="folio-col m3">
+                <img src="home/images/p1.png" style="width:100%" onclick="onClick(this)" class="folio-hover-opacity" alt="Chaos Crypt is a competitive, 2 player, dungeon crawler game for the PC. The main player navigates a series of dungeons to find the exit while the other player places monsters, sets traps, and uses the environment to cause destruction and chaos to kill the first before they reach the end.">
+            </div>
+
+            <div class="folio-col m3">
+                <img src="home/images/p2.png" style="width:100%" onclick="onClick(this)" class="folio-hover-opacity" alt="This is a 32-bit CPU written in Verilog and implemented on a Xilinx 7000 FPGA. The CPU implements the MIPS instruction set architecture, and utilizes a pipelined datapath to reduce the use of stalling instructions. The project was completed over the course of a few months for my computer organization and design course at Penn State.">
+            </div>
+
+            <div class="folio-col m3">
+                <img src="home/images/p3.png" style="width:100%" onclick="onClick(this)" class="folio-hover-opacity" alt="This API written for the C language implements a variety of file management and IO functions using a set of functions that operate on storage blocks. The file API is very similair to the open(), close(), read(), and write() functions from the C standard libraries. The API also includes a network/client interface for communicating requests to a centrally networked file server. The project was completed over the course of a few months for my systems progamming course at Penn State.">
+            </div>
+
+            <div class="folio-col m3">
+                <img src="home/images/p5.jpg" style="width:100%" onclick="onClick(this)" class="folio-hover-opacity" alt="The code">
+            </div>
+        </div>
+        <div class="folio-row folio-center">
+            <h4 class="folio-hover-opacity "><a href="http://github.com/arjankohli">See more of my work <i class="fab fa-github"></i></a></h4>
+        </div>
+    </div>
+
+    <!-- Modal for full size images on click-->
+    <div id="modal01" class="folio-modal folio-black" onclick="this.style.display='none'">
+        <span class="folio-button folio-large folio-black folio-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+        <div class="folio-modal-content folio-animate-zoom folio-center folio-transparent folio-padding-64">
+            <img id="img01" class="folio-image">
+            <p id="caption" class="folio-opacity folio-large"></p>
+        </div>
+    </div>
+
+    <!-- Second Parallax Image with Portfolio Text -->
+    <div class="bgimg-2 folio-display-container folio-opacity-min">
+        <div class="folio-display-middle">
+            <span class="folio-xxlarge folio-text-white folio-wide">ABOUT ME</span>
+        </div>
+    </div>
+
+    <!-- Container (About Section) -->
+    <div class="folio-content folio-container folio-padding-64" id="about">
+        <p class="folio-center"><em>Do you ever question what beauty is?</em></p>
+        <p>
+          Shelby does, and has taken to art as a way for people to think about and hopefully discuss the problems that standards of beauty create.</p>
+        <div class="folio-row">
+            <div class="folio-col m6 folio-center folio-padding-large">
+                <p><b><i class="fa fa-user folio-margin-right"></i>Shelby Berryann</b></p>
+                <br>
+                <img src="home/images/profile.jpg" class="folio-round folio-image folio-opacity-profile folio-hover-opacity-off-profile" alt="Photo of Me" width="500" height="333">
+            </div>
+
+            <div class="folio-col m6 folio-padding-large">
+              <p>
+                She hopes her cartoonlike and satirical take on the human body parts typically considered sexy will allow viewers to gain an appreciation for what it is like to have breasts and the ugly reality of life in an age where it is drowning in advertisements and media.<p>
+              <p class="folio-hide-small">
+                "I really would like to give girls something they can relate to. Our chests are determine our worth in the eyes of some people and hopefully these pieces will destroy any preconceived notions about what breasts should look like."</p>
+              <p>
+                Shelby has worked with oil painting, acrylic painting, watercolor, figure drawing, sculpture, and 3D printing classes. Her interests expand beyond a wide range of mediums, however her preferred method is acrylic painting.</p>
+              <p class="folio-hide-small">
+                Shelby grew up in Quakertown, Pennsylvania with her small family. She always found refuge in art whenever trying to express herself and was involved in classes, camps and more from an early age. Shelby is in the process of completing her BA in Art at the Pennsylvania State University in University Park, with a primary focus on painting and sculpture.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Third Parallax Image with Contact Text -->
+    <div class="bgimg-3 folio-display-container folio-opacity-min">
+        <div class="folio-display-middle">
+            <span class="folio-xxlarge folio-text-white folio-wide">CONTACT</span>
+        </div>
+    </div>
+
+    <!-- Container (Contact Section) -->
+    <div class="folio-content folio-container folio-padding-64" id="contact">
+        <h3 class="folio-center">ALWAYS AVAILABLE</h3>
+        <p class="folio-center">Shelby is always available for <em>commissions, conferences, showings, art sales, galleries, museums, presentations, and more.</em></p>
+
+        <div class="folio-row folio-padding-32 folio-section">
+
+            <div class="folio-col m6 folio-panel">
+                <img src="home/images/wix/IMG_2511.JPG.jpg" class="folio-image folio-padding-16" alt="Shut It" style="transform:rotate(90deg);min-width:100%;">
+            </div>
+
+            <div class="folio-col m6 folio-panel">
+                <div class="folio-large">
+                    <p>For inquiries she can be contacted through one of the following:
+                    <br>
+                    <i class="fa fa-envelope fa-fw folio-xlarge folio-margin-right"></i> <a class="folio-hover-opacity" href="mailto:sh3lby.hi@gmail.com">shelbynoelle.art@gmail.com</a>
+                    <br>
+                    <i class="fa fa-envelope fa-fw folio-xlarge folio-margin-right"></i> <a class="folio-hover-opacity" href="mailto:snoellebackgrounds@gmail.com">snoellebackgrounds@gmail.com</a>
+                    </p>
+                </div>
+
+                <div class="folio-large">
+                    <p>Check out some of my sites:
+                    <br>
+                    <i class="fab fa-instagram fa-fw folio-xlarge folio-margin-right"></i><a class="folio-hover-opacity" href="http://instagram.com/shelbynoelleart/">shelbynoelleart/</a>
+                    </p>
+                </div>
+
+                <div class="folio-large folio-margin-bottom">
+                    <p>
+                    <i class="fa fa-file-word fa-fw folio-xlarge folio-margin-right"></i><a class="folio-hover-opacity" href="shelby_berryann_resume.pdf">My Resume</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="folio-center folio-black folio-padding-32 folio-opacity-footer folio-hover-opacity-off-footer">
+        <a href="#home" class="folio-button folio-light-grey"><i class="fa fa-arrow-up folio-margin-right"></i>To the top</a>
+        <div class="folio-xlarge folio-section">
+            <p class="folio-large">Find me on the web.</p>
+            <a href="mailto:shelbynoelle.art@gmail.com"><i class="far fa-envelope folio-hover-opacity"></i></a>
+            <a href="http://instagram.com/shelbynoelleart/"><i class="fab fa-instagram folio-hover-opacity"></i></a>
+        </div>
+    </footer>
+
+    <!-- Onpage Scripts -->
+    <script>
+        // Modal Image Gallery
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+            var captionText = document.getElementById("caption");
+            captionText.innerHTML = element.alt;
+        }
+
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function toggleFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("folio-show") == -1) {
+                x.className += " folio-show";
+            } else {
+                x.className = x.className.replace(" folio-show", "");
+            }
+        }
+    </script>
+
+</body>
+</html>
