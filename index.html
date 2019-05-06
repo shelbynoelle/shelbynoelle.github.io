@@ -146,6 +146,43 @@
     </style>
 </head>
 
+<script>
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://api.instagram.com/v1/users/self/media/recent/?access_token=5452392704.c020aaa.a8284c2fa0c64499bf69ee69d91dd7bd&count=8', true);
+
+    request.onload = function(container) {
+      if (request.status >= 200 && request.status < 400) { // Success
+        var data = JSON.parse(request.responseText);
+
+        for (var i=0;i < data.data.length;i++) {
+          var container = document.getElementById('insta-feed');
+          var imgURL = data.data[i].images.standard_resolution.url;
+
+          console.log(imgURL);
+
+          var div = document.createElement('div');
+          div.setAttribute('class','folio-col m3');
+          container.appendChild(div);
+
+          var img = document.createElement('img');
+          img.setAttribute('alt','');
+          img.setAttribute('src',imgURL);
+          img.setAttribute('style','width:100%');
+          img.setAttribute('onclick','onClick(this)');
+          img.setAttribute('class', 'folio-hover-opacity folio-padding-smallish');
+          div.appendChild(img);
+        }
+
+        console.log(data);
+      } else {
+      }
+    };
+    request.onerror = function() {
+      // There was a connection error of some sort
+    };
+    request.send();
+</script>
+
 <body>
     <!-- Navbar (sit on top) -->
     <div class="folio-top">
@@ -177,29 +214,15 @@
     <!-- Container (Portfolio Section) -->
     <div class="folio-content folio-container folio-padding-64" id="portfolio">
         <h3 class="folio-center">MY WORK</h3>
-        <p class="folio-center"><em>Here is some of my favorite work.</em></p>
+        <p class="folio-center"><em>Here is some of my most recent work.</em></p>
         <br>
 
         <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-        <div class="folio-row-padding folio-center">
-            <div class="folio-col m3">
-                <img src="home/images/p1.png" style="width:100%" onclick="onClick(this)" class="folio-hover-opacity" alt="Chaos Crypt is a competitive, 2 player, dungeon crawler game for the PC. The main player navigates a series of dungeons to find the exit while the other player places monsters, sets traps, and uses the environment to cause destruction and chaos to kill the first before they reach the end.">
-            </div>
+        <!-- This div gets populated by an onpage script which loads the images from Instagram via their API -->
+        <div class=" folio-center" id="insta-feed"></div>
 
-            <div class="folio-col m3">
-                <img src="home/images/p2.png" style="width:100%" onclick="onClick(this)" class="folio-hover-opacity" alt="This is a 32-bit CPU written in Verilog and implemented on a Xilinx 7000 FPGA. The CPU implements the MIPS instruction set architecture, and utilizes a pipelined datapath to reduce the use of stalling instructions. The project was completed over the course of a few months for my computer organization and design course at Penn State.">
-            </div>
-
-            <div class="folio-col m3">
-                <img src="home/images/p3.png" style="width:100%" onclick="onClick(this)" class="folio-hover-opacity" alt="This API written for the C language implements a variety of file management and IO functions using a set of functions that operate on storage blocks. The file API is very similair to the open(), close(), read(), and write() functions from the C standard libraries. The API also includes a network/client interface for communicating requests to a centrally networked file server. The project was completed over the course of a few months for my systems progamming course at Penn State.">
-            </div>
-
-            <div class="folio-col m3">
-                <img src="home/images/p5.jpg" style="width:100%" onclick="onClick(this)" class="folio-hover-opacity" alt="The code">
-            </div>
-        </div>
         <div class="folio-row folio-center">
-            <h4 class="folio-hover-opacity "><a href="http://github.com/arjankohli">See more of my work <i class="fab fa-github"></i></a></h4>
+            <h4 class="folio-hover-opacity "><a href="https://www.instagram.com/shelbynoelleart/">See more of my work <i class="fab fa-instagram"></i></a></h4>
         </div>
     </div>
 
@@ -233,9 +256,9 @@
 
             <div class="folio-col m6 folio-padding-large">
               <p>
-                She hopes her cartoonlike and satirical take on the human body parts typically considered sexy will allow viewers to gain an appreciation for what it is like to have breasts and the ugly reality of life in an age where it is drowning in advertisements and media.<p>
+                She hopes her cartoonlike and satirical take on the human body parts typically considered sexy will allow viewers to gain an appreciation for what it is like to have breasts and the ugly reality of life in an age where we are drowning in advertisements and media.<p>
               <p class="folio-hide-small">
-                "I really would like to give girls something they can relate to. Our chests are determine our worth in the eyes of some people and hopefully these pieces will destroy any preconceived notions about what breasts should look like."</p>
+                "I really would like to give girls something they can relate to. Our chests determine our worth in the eyes of some people and hopefully these pieces will destroy any preconceived notions about what breasts should look like."</p>
               <p>
                 Shelby has worked with oil painting, acrylic painting, watercolor, figure drawing, sculpture, and 3D printing classes. Her interests expand beyond a wide range of mediums, however her preferred method is acrylic painting.</p>
               <p class="folio-hide-small">
